@@ -1,0 +1,26 @@
+#!/bin/python
+#Hurdle Race
+#https://www.hackerrank.com/challenges/the-hurdle-race?h_r=internal-search
+#print "Hurdle Race"
+hurdles=[]
+#print "Enter size & power"
+size,power=raw_input().split(" ")
+i=0
+size=int(size)
+power=int(power)
+count=0
+temp=raw_input()
+hurdles = [int(x) for x in temp.split()]
+#print "The array is "
+#print hurdles
+#print "size = ",size,"power = ",power
+for i in range (0,size):
+#	print "count = ",count
+	if(hurdles[i]>power):
+		temp=hurdles[i]-power
+#		print "temp = ",temp,"power = ",power,"hurdles[i] = ",hurdles[i]
+		count=count+temp
+#		print "count = ",count
+		power=hurdles[i]
+#print "The count = ",count
+print count
