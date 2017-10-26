@@ -1,0 +1,33 @@
+#https://www.hackerrank.com/challenges/electronics-shop?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
+#Electronics Shop
+s,n,m=raw_input().split(' ')
+s=int(s)
+n=int(n)
+m=int(m)
+count=0
+zcount=0
+ranger=[]
+#print s+1, n+1, m+1
+temp=raw_input()
+key = [int(x) for x in temp.split()]
+#print key
+temp=raw_input()
+usb = [int(x) for x in temp.split()]
+#print usb
+for i in range(0,n):
+    for j in range(0,m):
+	temp=key[i]+usb[j]
+	if(temp<=s):	
+	    #print temp
+	    ranger.append(temp)
+	    count=count+1
+#print ranger
+if(count==0):
+    print "-1"
+else:
+    temp=ranger[0]
+    #print temp
+    for i in range(0,count):
+	if(ranger[i]>temp):
+	    temp=ranger[i]
+    print temp
