@@ -1,0 +1,33 @@
+#https://www.hackerrank.com/challenges/beautiful-triplets?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=45-day-campaign
+#Beautiful Triplets
+n,d=raw_input().split(' ')
+n=int(n)
+d=int(d)
+count=0
+real_count=0
+#print n,d
+temp=raw_input()
+key = [int(x) for x in temp.split()]
+#print key
+'''for j in range(0,n-d+1):
+    print "j = ",j
+    for i in range (0,n):
+	#print key[i]
+	print "i = ",i
+	sum=key[i]+d
+	if (sum in key):
+	    #print "YES"
+ 	    count=count+1
+    if(count==2):
+	real_count=real_count+1
+    count=0
+print real_count
+'''
+for i in range(0,n):
+#    print key[i],"-->",key[i]+d
+    temp=key[i]+d
+    if(temp in key):
+	ztemp=temp+d
+	if(ztemp in key):
+	    count=count+1
+print count
