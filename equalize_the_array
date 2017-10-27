@@ -1,0 +1,37 @@
+#https://www.hackerrank.com/challenges/equality-in-a-array?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=37-day-campaign
+#Equalize the Array
+array=[]
+size=input()
+count=1
+count_imp=[0]*100
+temp_count=0
+#print size
+temp=raw_input()
+numbers = [int(x) for x in temp.split()]
+#print numbers
+array.append(numbers[0])
+#print "array[0] = ",array[0],"numbers[0] = ",numbers[0]
+for i in range (0,size):
+#	print "i = ",i
+	for j in range(0,count):
+#		print "j = ",j
+		if( numbers[i] in array):
+#			if(i<size):
+#				i=i+1
+		    temp_count=temp_count+1
+		else:
+		    array.append(numbers[i])
+		    count=count+1
+#			print "ELSE"
+#			print array
+#print array
+for i in range(0,size):
+	for j in range(0,count):
+		if(numbers[i]==array[j]):
+			count_imp[j]=count_imp[j]+1
+#print count_imp
+greatest=count_imp[0]
+for i in range(0,size):
+	if(greatest<count_imp[i]):
+		greatest=count_imp[i]
+print size-greatest
