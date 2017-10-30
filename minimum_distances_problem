@@ -1,0 +1,25 @@
+#https://www.hackerrank.com/challenges/minimum-distances?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=15-day-campaign
+#Minimum Distances
+size=input()
+temp=raw_input()
+difference=[]
+count=0
+numbers = [int(x) for x in temp.split()]
+#print "size = ",size
+#print "array = ",numbers
+for i in range(0,size):
+	for j in range(i+1,size):
+		if(numbers[i]==numbers[j]):
+			#print "numbers[i] = ",numbers[i],"numbers[j] = ",numbers[j]			
+			temp=j-i
+			difference.append(temp)
+			count=count+1
+#print "result = ",difference
+if not difference:
+	print "-1"
+else:
+	temp=difference[0]
+	for i in range(0,count):
+		if(temp>difference[i]):
+			temp=difference[i]
+	print temp
